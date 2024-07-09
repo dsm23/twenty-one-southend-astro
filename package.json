@@ -18,6 +18,7 @@
     "typescript": "^5.5.3"
   },
   "devDependencies": {
+    "@astrojs/tailwind": "^5.1.0",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
@@ -26,6 +27,8 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
-    "prettier-plugin-css-order": "^2.1.2"
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.4"
   }
 }
