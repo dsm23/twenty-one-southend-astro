@@ -11,6 +11,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.8.0
         version: 0.8.0(prettier@3.3.2)(typescript@5.5.3)
+      '@fontsource/jost':
+        specifier: ^5.0.18
+        version: 5.0.18
       astro:
         specifier: ^4.11.5
         version: 4.11.5(@types/node@20.14.10)(typescript@5.5.3)
@@ -449,6 +452,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/jost@5.0.18':
+    resolution: {integrity: sha512-NeFIj4DQ7Ll5VocGrH9yIZcgzyxXfpiPf01PeQORR3HR9NhcNQGpzOLtqAdpQKQnbjw5IcG6ACnucsFUFX9szw==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -3278,6 +3284,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource/jost@5.0.18': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:
