@@ -1,19 +1,22 @@
 ---
-
+import Layout from "~/components/layout/index.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Twenty One Southend – Venue, Cafe & Cultural Centre</title>
-  </head>
-  <body>
+<Layout title="Twenty One Southend – Venue, Cafe & Cultural Centre">
+  <main class="tw-container">
     <h1>
       Welcome to Twenty One – a wonderful venue, exhibition space and café & bar
       on Southend seafront
     </h1>
-  </body>
-</html>
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    color: var(--color-be88c48);
+    font-weight: 600;
+    font-size: 68px;
+    line-height: 1.4em;
+    letter-spacing: -0.3px;
+  }
+</style>
