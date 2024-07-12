@@ -1,0 +1,57 @@
+---
+import Layout from "~/components/layout/index.astro";
+import Main from "~/components/main/index.astro";
+
+const res = await fetch(
+  `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/125`
+);
+const about = await res.json();
+---
+
+<Layout title="About – Twenty One Southend">
+  <Main class="tw-container">
+    <h1 class="tw-sr-only" set:html={about.title.rendered} />
+    <Fragment set:html={about.content.rendered} />
+  </Main>
+</Layout>
+
+<style>
+  main :global(a) {
+    color: theme(colors.sky.800);
+    text-decoration: underline;
+  }
+
+  main :global(h2) {
+    color: var(--color-be88c48);
+    font-weight: 600;
+    font-size: var(--typography-08758cf-font-size);
+  }
+
+  main :global(h3) {
+    font-size: 1.75rem;
+  }
+
+  main
+    :global(
+      .elementor-125
+        .elementor-element.elementor-element-2b68243
+        > .elementor-widget-container
+    ) {
+    background-image: url(https://twentyonesouthend.co.uk/wp-content/uploads/2021/11/Line-Divider.png);
+    background-position: center center;
+  }
+
+  main :global(.elementor-125 .elementor-element.elementor-element-4e13012) {
+    color: var(--color-be88c48);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 37px;
+    font-family: "Jost", Sans-serif;
+    letter-spacing: 0.1px;
+  }
+
+  main :global(.elementor-column .elementor-spacer-inner) {
+    --spacer-size: 50px;
+    height: var(--spacer-size);
+  }
+</style>
