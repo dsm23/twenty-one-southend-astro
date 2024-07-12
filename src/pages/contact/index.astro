@@ -1,0 +1,38 @@
+---
+import Layout from "~/components/layout/index.astro";
+import Main from "~/components/main/index.astro";
+
+const res = await fetch(
+  `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/172`
+);
+const contact = await res.json();
+---
+
+<Layout title="Contact – Twenty One Southend">
+  <Main class="tw-container tw-text-[var(--color-text)]">
+    <h1 class="tw-sr-only">Contact Us</h1>
+    <Fragment set:html={contact.content.rendered} />
+  </Main>
+</Layout>
+
+<style>
+  main :global(h2) {
+    color: var(--color-be88c48);
+    font-weight: 600;
+    font-size: var(--typography-08758cf-font-size);
+  }
+
+  main
+    :global(
+      .elementor-element.elementor-element-28a76b02
+        > .elementor-widget-container
+    ) {
+    background-image: url(https://twentyonesouthend.co.uk/wp-content/uploads/2021/11/Line-Divider.png);
+    background-position: center center;
+  }
+
+  main :global(.elementor-column .elementor-spacer-inner) {
+    --spacer-size: 50px;
+    height: var(--spacer-size);
+  }
+</style>
