@@ -1,0 +1,16 @@
+---
+import Layout from "~/components/layout/index.astro";
+import Main from "~/components/main/index.astro";
+
+const res = await fetch(
+  `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/177`
+);
+const policy = await res.json();
+---
+
+<Layout title="Picture Gallery – Twenty One Southend">
+  <Main class="tw-container tw-text-[var(--color-text)]">
+    <h1 class="tw-sr-only">Picture Gallery</h1>
+    <Fragment set:html={policy.content.rendered} />
+  </Main>
+</Layout>
