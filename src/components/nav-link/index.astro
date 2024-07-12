@@ -1,0 +1,48 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const props = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<a
+  {...props}
+  class:list={[
+    props.class,
+    {
+      active: props.href === pathname,
+    },
+  ]}><slot /></a
+>
+
+<style>
+  a {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #0000001a;
+    color: #55595c;
+    font-size: 18px;
+  }
+
+  .active {
+    background-color: #55595c;
+    color: theme(colors.white);
+  }
+
+  @screen md {
+    a {
+      width: auto;
+      padding: 8px 15px;
+      border-bottom: none;
+      white-space: nowrap;
+    }
+
+    .active {
+      background-color: inherit;
+      color: #55595c;
+    }
+  }
+</style>

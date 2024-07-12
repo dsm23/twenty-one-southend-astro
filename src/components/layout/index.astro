@@ -1,6 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Footer from "~/components/footer/index.astro";
+import Navbar from "~/components/navbar";
+import NavLink from "~/components/nav-link/index.astro";
 
 import "@fontsource/jost";
 import "~/styles.css";
@@ -19,7 +21,31 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <header>
+      <a href="#content" class="tw-sr-only focus:tw-not-sr-only skip-link">
+        Skip to content
+      </a>
+      <Navbar client:load>
+        <NavLink href="/about/">About Us</NavLink>
+        <NavLink href="/menu/">Menu</NavLink>
+        <NavLink href="/contact/">Contact</NavLink>
+        <NavLink href="/picture-gallery/">Picture Gallery</NavLink>
+      </Navbar>
+    </header>
+
     <slot />
     <Footer />
+    <style>
+      .skip-link:focus {
+        z-index: 99999;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        padding: 12px 24px;
+        background-color: #eee;
+        color: #333;
+        font-size: 1rem;
+      }
+    </style>
   </body>
 </html>

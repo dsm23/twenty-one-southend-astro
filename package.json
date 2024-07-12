@@ -15,8 +15,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.8.0",
+    "@astrojs/react": "^3.6.0",
     "@fontsource/jost": "^5.0.18",
+    "@headlessui/react": "^2.1.2",
     "astro": "^4.11.5",
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.4.0",
     "typescript": "^5.5.3"
   },
   "devDependencies": {
@@ -26,6 +32,8 @@
     "@commitlint/types": "^19.0.3",
     "@playwright/test": "^1.45.1",
     "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.0.11",
